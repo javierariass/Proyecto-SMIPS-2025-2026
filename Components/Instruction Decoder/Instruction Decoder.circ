@@ -201,6 +201,27 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="none" height="80" stroke="#000000" stroke-width="2" width="160" x="50" y="50"/>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="69" y="82">Intruction</text>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="190" y="62">Op-Code</text>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="179" y="71">Destination-Jump</text>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="199" y="82">Rs</text>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="200" y="93">Rt</text>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="194" y="102">Const</text>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="198" y="112">Rd</text>
+      <text font-family="SansSerif" font-size="6" text-anchor="middle" x="194" y="122">Func</text>
+      <text font-family="Segoe UI Black" font-size="12" text-anchor="middle" x="125" y="94">Instruction Decoder</text>
+      <circ-port height="8" pin="160,250" width="8" x="46" y="76"/>
+      <circ-port height="10" pin="710,90" width="10" x="205" y="55"/>
+      <circ-port height="10" pin="710,160" width="10" x="205" y="65"/>
+      <circ-port height="10" pin="710,230" width="10" x="205" y="75"/>
+      <circ-port height="10" pin="710,270" width="10" x="205" y="85"/>
+      <circ-port height="10" pin="710,320" width="10" x="205" y="95"/>
+      <circ-port height="10" pin="710,370" width="10" x="205" y="105"/>
+      <circ-port height="10" pin="710,410" width="10" x="205" y="115"/>
+      <circ-anchor facing="east" height="6" width="6" x="207" y="57"/>
+    </appear>
     <wire from="(880,10)" to="(880,440)"/>
     <wire from="(540,440)" to="(880,440)"/>
     <wire from="(540,10)" to="(540,440)"/>
@@ -221,27 +242,78 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(230,240)" to="(270,240)"/>
     <wire from="(340,220)" to="(380,220)"/>
     <wire from="(380,220)" to="(420,220)"/>
-    <comp lib="0" loc="(710,320)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="Const"/>
+    <comp lib="0" loc="(240,260)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-Code"/>
     </comp>
-    <comp lib="0" loc="(710,320)" name="Pin">
+    <comp lib="0" loc="(710,160)" name="Pin">
       <a name="facing" val="west"/>
-      <a name="width" val="16"/>
+      <a name="output" val="true"/>
+      <a name="width" val="26"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="6" loc="(711,45)" name="Text">
-      <a name="text" val="OutPuts"/>
-      <a name="font" val="Segoe UI Black plain 26"/>
-    </comp>
-    <comp lib="0" loc="(710,370)" name="Tunnel">
+    <comp lib="0" loc="(710,410)" name="Tunnel">
       <a name="facing" val="east"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Func-Code"/>
+    </comp>
+    <comp lib="0" loc="(710,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(370,260)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="Rs"/>
+    </comp>
+    <comp lib="0" loc="(160,250)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Instruction"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(440,260)" name="Tunnel">
+      <a name="facing" val="north"/>
       <a name="width" val="5"/>
       <a name="label" val="Rd"/>
     </comp>
+    <comp lib="0" loc="(710,160)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="26"/>
+      <a name="label" val="Destination-Jump"/>
+    </comp>
+    <comp lib="0" loc="(710,410)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="6"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(710,370)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(710,270)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rt"/>
+    </comp>
+    <comp lib="0" loc="(370,240)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="Rt"/>
+    </comp>
+    <comp lib="0" loc="(710,90)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="6"/>
+      <a name="tristate" val="false"/>
+    </comp>
     <comp lib="0" loc="(710,270)" name="Pin">
       <a name="facing" val="west"/>
+      <a name="output" val="true"/>
       <a name="width" val="5"/>
       <a name="tristate" val="false"/>
     </comp>
@@ -250,31 +322,30 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="26"/>
       <a name="label" val="Destination-Jump"/>
     </comp>
-    <comp lib="0" loc="(710,160)" name="Tunnel">
+    <comp lib="0" loc="(710,370)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="width" val="26"/>
-      <a name="label" val="Destination-Jump"/>
-    </comp>
-    <comp lib="0" loc="(440,260)" name="Tunnel">
-      <a name="facing" val="north"/>
       <a name="width" val="5"/>
       <a name="label" val="Rd"/>
     </comp>
-    <comp lib="0" loc="(710,230)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
+    <comp lib="6" loc="(275,48)" name="Text">
+      <a name="text" val="Instruction Decoder"/>
+      <a name="font" val="Segoe UI Black plain 26"/>
     </comp>
-    <comp lib="0" loc="(160,250)" name="Pin">
-      <a name="width" val="32"/>
+    <comp lib="0" loc="(710,320)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="Instruction"/>
-      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(710,90)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="6"/>
       <a name="label" val="Op-Code"/>
+    </comp>
+    <comp lib="0" loc="(710,230)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rs"/>
     </comp>
     <comp lib="0" loc="(320,240)" name="Splitter">
       <a name="fanout" val="3"/>
@@ -306,30 +377,24 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit24" val="2"/>
       <a name="bit25" val="2"/>
     </comp>
-    <comp lib="0" loc="(710,410)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="width" val="6"/>
-      <a name="tristate" val="false"/>
+    <comp lib="0" loc="(710,320)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Const"/>
     </comp>
-    <comp lib="0" loc="(710,370)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
+    <comp lib="0" loc="(440,180)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Func-Code"/>
+    </comp>
+    <comp lib="6" loc="(711,45)" name="Text">
+      <a name="text" val="OutPuts"/>
+      <a name="font" val="Segoe UI Black plain 26"/>
     </comp>
     <comp lib="0" loc="(380,210)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="width" val="16"/>
       <a name="label" val="Const"/>
-    </comp>
-    <comp lib="0" loc="(240,260)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="6"/>
-      <a name="label" val="Op-Code"/>
-    </comp>
-    <comp lib="0" loc="(710,160)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="width" val="26"/>
-      <a name="tristate" val="false"/>
     </comp>
     <comp lib="0" loc="(420,220)" name="Splitter">
       <a name="fanout" val="3"/>
@@ -350,43 +415,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit13" val="2"/>
       <a name="bit14" val="2"/>
       <a name="bit15" val="2"/>
-    </comp>
-    <comp lib="6" loc="(275,48)" name="Text">
-      <a name="text" val="Instruction Decoder"/>
-      <a name="font" val="Segoe UI Black plain 26"/>
-    </comp>
-    <comp lib="0" loc="(370,240)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="Rt"/>
-    </comp>
-    <comp lib="0" loc="(710,410)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="6"/>
-      <a name="label" val="Func-Code"/>
-    </comp>
-    <comp lib="0" loc="(440,180)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="6"/>
-      <a name="label" val="Func-Code"/>
-    </comp>
-    <comp lib="0" loc="(710,230)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rs"/>
-    </comp>
-    <comp lib="0" loc="(370,260)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="Rs"/>
-    </comp>
-    <comp lib="0" loc="(710,270)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rt"/>
-    </comp>
-    <comp lib="0" loc="(710,90)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="width" val="6"/>
-      <a name="tristate" val="false"/>
     </comp>
     <comp lib="0" loc="(210,250)" name="Splitter">
       <a name="incoming" val="32"/>
